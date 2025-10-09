@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de tarefas</title>
+</head>
+
+<body>
+    <main id="app">
+        <section class="todo-list">
+            <h1>Tarefas</h1>
+            <div class="all-todos">
+                <!-- 
+                Por padrão, a propriedade "status" começa como false.
+                No :class verificamos: se status === true, aplicamos a classe "status",
+                caso contrário, mantemos o valor padrão (sem classe).
+                
+                Usamos também o @click, que serve para alterar o valor de "status"
+                quando o usuário clicar na tarefa. Isso é necessário para
+                alternar a aplicação da classe "status" dinamicamente. 
+                -->
+                <div v-for="todo in todos" class="single-todo" :class="todo.status ? 'status' : ''"
+                    @click="todo.status = ! todo.status">
+                    <p>{{todo.name}}</p>
+                </div>
+            </div>
+
+            <input type="text" v-model="newTodo.name" placeholder="Adicionar nova tarefa ...">
+            <button class="add" @click="addTodo">Adicionar</button><br><br>
+
+            <!-- 1 utilizamos o v-if para exibir o botao de remover apenas quando tiver tarefas lancada -->
+            <!-- 2 Utilizamos o @click para remover todas as tarefa da lista -->
+            <button class="clear-all-todo" v-if="todos.length > 0" @click="todos = []">Limpar todas as tarefas</button>
+
+
+            <!-- 1 Utilizamos o  (v-if com some) para exibir o botão de limpar tarefas concluidas apenas se tiver tarefa com status true(conlcuida) -->
+            <!-- 2 Utilizamos o @click com o filter para remover somente as  tarefa com status true(conlcuida) -->
+            <button class="clear-only-todo-done" v-if="todos.some(todo=>todo.status)"
+                @click="todos = todos.filter(todo => !todo.status)">Limpar somente as tarefa concluidas</button><br><br>
+
+            <div class="instructions">
+                Instruções:
+                <ul>
+                    <li>Clique no texto da tarefa para alternar entre feita / não feita</li>
+                    <li>Use o botão limpar tudo para remover todas as tarefas</li>
+                    <li>Use o input para adicionar novas tarefas</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
