@@ -1,11 +1,128 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-
-    /* background-color: red; */
+    background-color: #fafaff;
 }
 
+/* Container principal */
+.todo-list {
+    width: 800px;
+    max-width: 95%; /* limite máximo pra telas pequenas */
+    margin: 60px auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Input + botão */
+input {
+    height: 36px;
+    width: 60%;
+    max-width: 400px;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+button.add {
+    height: 36px;
+    border-radius: 10px;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    padding: 0 15px;
+}
 
 main .all-todos .single-todo.status p {
     text-decoration: line-through;
+}
+
+/* Botões */
+button.clear-all-todo,
+button.clear-only-todo-done {
+    border-radius: 10px;
+    height: 36px;
+    cursor: pointer;
+    border: none;
+    padding: 0 20px;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 5px 0 5px;
+}
+
+button.clear-all-todo {
+    background-color: red;
+}
+
+button.clear-only-todo-done {
+    background-color: #415E72;
+}
+
+/* Texto das instruções */
+.instructions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.instructions li {
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.clear {
+    color: red;
+}
+
+/* ------------------ */
+/* 🎯 Responsividade  */
+/* ------------------ */
+
+@media (max-width: 768px) {
+    .todo-list {
+        width: 95%;
+        margin-top: 40px;
+        padding: 15px;
+    }
+
+    input {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    button.add {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button.clear-all-todo,
+    button.clear-only-todo-done {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .instructions {
+        font-size: 0.95em;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .instructions {
+        font-size: 0.9em;
+    }
 }

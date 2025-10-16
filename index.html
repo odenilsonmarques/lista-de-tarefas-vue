@@ -34,20 +34,20 @@
 
             <!-- 1 utilizamos o v-if para exibir o botao de remover apenas quando tiver tarefas lancada -->
             <!-- 2 Utilizamos o @click para remover todas as tarefa da lista -->
-            <button class="clear-all-todo" v-if="todos.length > 0" @click="todos = []">Limpar todas as tarefas</button>
+            <button class="clear-all-todo" v-if="todos.length > 0" @click="todos = []">Limpar todas tarefas</button>
 
 
             <!-- 1 Utilizamos o  (v-if com some) para exibir o botão de limpar tarefas concluidas apenas se tiver tarefa com status true(conlcuida) -->
             <!-- 2 Utilizamos o @click com o filter para remover somente as  tarefa com status true(conlcuida) -->
             <button class="clear-only-todo-done" v-if="todos.some(todo=>todo.status)"
-                @click="todos = todos.filter(todo => !todo.status)">Limpar somente as tarefa concluidas</button><br><br>
+                @click="todos = todos.filter(todo => !todo.status)">Limpar tarefas feitas</button><br><br>
+            <hr>
 
             <div class="instructions">
-                Instruções:
+                <strong>INSTRUÇÕES</strong>
                 <ul>
-                    <li>Clique no texto da tarefa para alternar entre feita / não feita</li>
-                    <li>Use o botão limpar tudo para remover todas as tarefas</li>
-                    <li>Use o input para adicionar novas tarefas</li>
+                    <li>Clique no texto da tarefa para alternar entre feita / não feita.</li>
+                    <li>Use o campo de texto para adicionar novas tarefas.</li>
                 </ul>
 
             </div>
