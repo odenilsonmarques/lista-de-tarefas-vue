@@ -84,6 +84,27 @@ button.clear-only-todo-done {
     color: red;
 }
 
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px 0;
+  font-size: 0.9em;
+  color: #333;
+  /* border-top: 1px solid #ddd; */
+  background-color: #fafaff;
+}
+
+footer a {
+  color: #415E72;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
 /* ------------------ */
 /* 🎯 Responsividade  */
 /* ------------------ */

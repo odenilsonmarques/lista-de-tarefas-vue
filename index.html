@@ -30,7 +30,7 @@
             </div>
 
             <input type="text" v-model="newTodo.name" placeholder="Adicionar nova tarefa ...">
-            <button class="add" @click="addTodo">Adicionar</button><br><br>
+            <button class="add" @click="addTodo()">Adicionar</button><br><br>
 
             <!-- 1 utilizamos o v-if para exibir o botao de remover apenas quando tiver tarefas lancada -->
             <!-- 2 Utilizamos o @click para remover todas as tarefa da lista -->
@@ -49,9 +49,18 @@
                     <li>Clique no texto da tarefa para alternar entre feita / não feita.</li>
                     <li>Use o campo de texto para adicionar novas tarefas.</li>
                 </ul>
-
             </div>
         </section>
+
+        <footer>
+            <p>Desenvolvido por <strong>Odenilson Marques</strong></p>
+            <p>
+                <a href="https://wa.me/5598981061009?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20seu%20projeto%20de%20lista%20de%20tarefas!"
+                    target="_blank">
+                    Entre em contato
+                </a>
+            </p>
+        </footer>
     </main>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

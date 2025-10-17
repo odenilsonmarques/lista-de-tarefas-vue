@@ -31,14 +31,16 @@ const todoList = {
     methods: {
         addTodo: function () {
             if (!this.newTodo.name) {
-                alert("Preencha o campo")
-            }
-            this.todos.push(this.newTodo)
-            this.newTodo = { status: false }
+                alert("A descrição da tarefa é obrigatória")
+            }else{
 
-            // Usando o localStorage e JSON.stringify para salvar a lista atualizada, para persistir os dados mesmo após recarregar a página.
-            // O JSON.stringify converte o array de objetos em uma string JSON. O localStorage só pode armazenar strings.'
-            localStorage.setItem('todos', JSON.stringify(this.todos))
+                this.todos.push(this.newTodo)
+                this.newTodo = { status: false }
+
+                // Usando o localStorage e JSON.stringify para salvar a lista atualizada, para persistir os dados mesmo após recarregar a página.
+                // O JSON.stringify converte o array de objetos em uma string JSON. O localStorage só pode armazenar strings.'
+                localStorage.setItem('todos', JSON.stringify(this.todos))
+            }
         }
     },
 
